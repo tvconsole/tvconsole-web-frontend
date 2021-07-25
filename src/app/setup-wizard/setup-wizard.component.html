@@ -1,0 +1,87 @@
+<mat-toolbar color="primary">
+  tvConsole
+</mat-toolbar>
+
+<mat-stepper>
+  <mat-step label="Setup" state="setup">
+    <p>Setup</p>
+    <mat-selection-list [multiple]="false">
+      <mat-list-option *ngFor="let option of ['Screen-only', 'Keyboard-only', 'Screen+Keyboard']" [value]="option">
+        {{option}}
+      </mat-list-option>
+    </mat-selection-list>
+    <div>
+      <button mat-button matStepperNext>Next</button>
+    </div>
+  </mat-step>
+  <mat-step label="Join | Create" state="chat" fxLayout="row">
+    <mat-form-field appearance="fill" fxFlex="100" style="width: 100%; margin-bottom: -1.25em">
+      <mat-label>Room name</mat-label>
+      <input matInput type="text" [(ngModel)]="value">
+    </mat-form-field>
+
+    <mat-selection-list [multiple]="false">
+      <mat-list-option *ngFor="let option of ['Join', 'Start']" [value]="option" fxFlex="100">
+        {{option}}
+      </mat-list-option>
+    </mat-selection-list>
+
+    <!--
+    <button fxFlex="100" mat-raised-button color="primary">Join</button>
+    <button fxFlex="100" mat-raised-button color="accent">Create</button>
+    -->
+
+    <mat-form-field appearance="fill" fxFlex="100" style="width: 100%; margin-top: 0.6em">
+      <mat-label>Nickname</mat-label>
+      <input matInput type="text" [(ngModel)]="value">
+    </mat-form-field>
+    <div>
+      <button mat-button matStepperPrevious>Back</button>
+      <button mat-button matStepperNext>Next</button>
+    </div>
+  </mat-step>
+  <mat-step label="Game + Console">
+    <mat-form-field appearance="fill" style="width: 100%">
+      <mat-label>Console</mat-label>
+      <select matNativeControl required>
+        <option value="TurboGrafx-16">TurboGrafx-16</option>
+      </select>
+    </mat-form-field>
+
+    <section>
+      <mat-label>Select game</mat-label>
+      <div class="example-button-row">
+        <div class="example-flex-container">
+          <div class="example-button-container">
+            <button mat-fab color="primary" aria-label="Example icon button with a delete icon">
+              <mat-icon>delete</mat-icon>
+            </button>
+          </div>
+          <div class="example-button-container">
+            <button mat-fab color="accent" aria-label="Example icon button with a bookmark icon">
+              <mat-icon>bookmark</mat-icon>
+            </button>
+          </div>
+          <div class="example-button-container">
+            <button mat-fab color="warn" aria-label="Example icon button with a home icon">
+              <mat-icon>home</mat-icon>
+            </button>
+          </div>
+          <div class="example-button-container">
+            <button mat-fab disabled aria-label="Example icon button with a heart icon">
+              <mat-icon>favorite</mat-icon>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </mat-step>
+
+  <!-- Icon overrides. -->
+  <ng-template matStepperIcon="phone">
+    <mat-icon>call_end</mat-icon>
+  </ng-template>
+  <ng-template matStepperIcon="chat">
+    <mat-icon>forum</mat-icon>
+  </ng-template>
+</mat-stepper>
