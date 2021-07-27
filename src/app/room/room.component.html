@@ -1,0 +1,19 @@
+<mat-toolbar color="primary">
+  {{roomName}}
+  <span fxFlex="auto"></span>
+  <button mat-fab color="warn" aria-label="fullscreen" (click)="fullscreen()">
+    <mat-icon>{{fullscreen_icon}}</mat-icon>
+  </button>
+  <span class="cdk-visually-hidden">
+      fullscreen
+    </span>
+  <span fxFlex="auto"></span>
+  Connected
+  <mat-icon style="padding-left: 0.1em" matBadge="1" matBadgeColor="warn">people</mat-icon>
+  <span class="cdk-visually-hidden">
+      number of people
+    </span>
+</mat-toolbar>
+<div style="padding: 1em" #roomBody>
+  Talk about a room with a view!
+</div>

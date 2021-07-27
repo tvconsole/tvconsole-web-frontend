@@ -32,4 +32,5 @@ jobs:
           git config --global user.name "$author"
           email="${email_author#*<}"; email="${email::-1}"
           git config --global user.email "$email"
-          ng deploy tvconsole-www --repo='https://'"$GITHUB_TOKEN"'@github.com/tvconsole/tvconsole.github.io' --branch='master' --message="$MSG" --name="$name" --email="$email" --no-silent
+        # TODO: trigger a merge from this app to the GH pages landing one
+        # ng deploy tvconsole-www --repo='https://'"$GITHUB_TOKEN"'@github.com/tvconsole/tvconsole.github.io' --branch='master' --message="$MSG" --name="$name" --email="$email" --no-silent

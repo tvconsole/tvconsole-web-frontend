@@ -6,7 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./setup-wizard.component.scss']
 })
 export class SetupWizardComponent implements OnInit {
-  value: string = '';
+  roomName: string = '';
+  nickname: string = '';
 
   constructor() { }
 
